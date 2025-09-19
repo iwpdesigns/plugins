@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Finance Quick View</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Google Finance</h1>
+      <p class="subtitle">Look up live market data directly from Google Finance.</p>
+    </header>
+
+    <main>
+      <form id="ticker-form">
+        <label for="ticker-input" class="sr-only">Ticker symbol</label>
+        <input
+          type="text"
+          id="ticker-input"
+          name="ticker"
+          placeholder="Enter symbol (e.g. GOOGL:NASDAQ)"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" id="lookup-button">Lookup</button>
+      </form>
+
+      <section id="result" class="card hidden" aria-live="polite"></section>
+
+      <section class="card" id="watchlist">
+        <div class="card-header">
+          <h2>Watchlist</h2>
+          <button id="add-to-watchlist" class="secondary" disabled>Add</button>
+        </div>
+        <p class="hint">
+          Save frequently used tickers for quick access. Items are stored with your Chrome profile.
+        </p>
+        <ul id="watchlist-items"></ul>
+      </section>
+    </main>
+
+    <template id="watchlist-item-template">
+      <li>
+        <button class="watchlist-symbol" data-symbol=""></button>
+        <button class="remove" title="Remove from watchlist" aria-label="Remove">&times;</button>
+      </li>
+    </template>
+
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>

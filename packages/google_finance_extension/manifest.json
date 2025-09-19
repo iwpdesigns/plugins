@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Google Finance Quick View",
+  "description": "Quickly inspect quotes from Google Finance without leaving your current tab.",
+  "version": "1.0.0",
+  "action": {
+    "default_title": "Google Finance Quick View",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.google.com/finance/*"
+  ]
+}
